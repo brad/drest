@@ -33,6 +33,9 @@ import drest
 # Create a generic client api object
 api = drest.API('http://localhost:8000/api/v1/')
 
+# Authorize (Basic or Digest)
+api.request.set_auth_credentials('your_username', 'your_password')
+
 # Make calls openly via any HTTP Method, and any path
 # GET http://localhost:8000/api/v1/users/1/
 response = api.make_request('GET', '/users/1/')
